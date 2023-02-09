@@ -1,0 +1,158 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #00a826;
+}
+
+body{
+  background-image: url(https://cdn.betwaygroup.com/medusa-production/1001/the-hunch-mobile.webp);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
+
+.Login, .Register, .Welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 0px 60px;
+  height: auto;
+  margin-top: 50px;
+}
+
+.Login h1, .Register h1{
+  color: rgb(95, 92, 92);
+  padding-top: 10px;
+  text-align: center;
+} 
+
+.Login .forgot, a
+{
+  margin-bottom: 5px;
+  color: #00a826;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: none;
+} 
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-size: cover;
+  }
+}
+
+.cta-container {
+  background-color: black;
+  opacity: 0.9;
+  margin: auto;
+  padding-bottom: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.cta-container .btn {
+  padding: 10px;
+  background-color: #00a826;
+  width: 200px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  height: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-radius: 1px;  
+  color: #fff;
+}
+
+
+ 
+.Login .btn, .Register .btn{
+  width: 100%;
+  padding: 10px;
+  background-color: #00a826;
+  color: #fff;
+  align-self: center;
+  font-family: interface,Arial,sans-serif!important;
+  border-radius: 1px;
+  font-weight: bolder;
+  font-size: 13px;
+  cursor: pointer;
+  height: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.Categories
+{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  background: black;
+  opacity: 0.9;
+  top: 60px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+}
+
+.Categories div
+{
+    align-content: center;
+    padding: 12px;
+    color: #fff;
+}
+
+.Categories .sports:hover
+{
+   border-bottom: 2px solid #00a826;
+}
+
+.Categories .live:hover
+{
+   border-bottom: 2px solid #89a800;
+}
+
+.Categories .casino:hover
+{
+   border-bottom: 2px solid #63dbff;
+}
+
+.Categories .esports:hover
+{
+   border-bottom: 2px solid #3b55e9;
+}
+
+.Categories .vegas:hover
+{
+   border-bottom: 2px solid #b93434;
+}
+
+.Welcome .bolderSpan
+{
+  font-weight: bold;
+  display: inline;
+  color: gray;
+}

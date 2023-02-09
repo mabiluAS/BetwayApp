@@ -1,0 +1,48 @@
+﻿a.navbar-brand {
+  text-align: center;
+  word-break: break-all;
+}
+
+.mainlogo {
+  width: 100%;
+    max-width: 120px;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.navbar-nav{
+  flex-direction: row;
+}
+
+.navbar-nav li{
+  padding-right: .3rem !important;
+  padding-left: .3rem !important;
+    letter-spacing: -.3px;
+    height: auto;    
+}
+
+.navbar-nav .btn {
+  font-family: interface,Arial,sans-serif!important;
+  border-radius: 1px;
+  font-weight: 600;
+  height: auto;
+}
+
+.btn-white {
+   background-color: white !important;
+   color: #00a826;
+   font-weight: bolder;
+}
+
+.btn-green {
+  background-color: #00a826 !important;
+  color: white;
+  font-weight: bolder;
+}
