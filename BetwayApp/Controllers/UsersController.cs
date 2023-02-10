@@ -27,11 +27,9 @@ namespace BetwayApp.Controllers
 
         [Route("api/login")]
         [HttpPost]
-        public JsonResult Login(string email, string password)
+        public User Login(string email, string password)
         {
-           return new JsonResult(_repository.Login(email, password),
-                new JsonSerializerOptions { PropertyNamingPolicy = null });
-
+           return _repository.Login(email, password);
         }
     }
 }

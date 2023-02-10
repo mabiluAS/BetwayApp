@@ -25,7 +25,7 @@ body{
   
 }
 
-.Login, .Register, .Welcome {
+.Login, .Register, .Welcome-popup {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,9 +150,32 @@ body{
    border-bottom: 2px solid #b93434;
 }
 
-.Welcome .bolderSpan
+.Welcome-popup .bolderSpan
 {
   font-weight: bold;
   display: inline;
   color: gray;
+}
+
+.hide {
+  position: absolute;
+  transform: scale(0);
+}
+
+.unhide-span-error{
+  display: inline;
+  border: 1px solid #e75757;
+  justify-content: center;
+  border-radius:  2px;
+  padding: 5px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.Welcome-popup
+{
+ 
+  bottom: 0;
+  transform: scale(1);
+  transition: 1.5s;
 }

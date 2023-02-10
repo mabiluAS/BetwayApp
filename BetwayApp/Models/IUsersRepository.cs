@@ -4,6 +4,6 @@
     {
         public void Register(User user);
 
-        public User? Login(string email, string password);
+        public User Login(string email, string password);
     }
 }

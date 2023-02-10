@@ -19,7 +19,6 @@ export class Home extends Component {
     return (
       <div>
         <Categories></Categories>
-        {this.state.active === "Welcome" && <Welcome name={""} surname={""}></Welcome>}
         {this.state.active === "Login" && <Login onClick={(e) => { e.preventDefault(); this.setState({active: "Register"})}}></Login>}
         {this.state.active === "Register" && <Register></Register>}
         {this.state.active != "Welcome" && <Cta onClick={() => this.setState({active: "Login"})} ></Cta>}

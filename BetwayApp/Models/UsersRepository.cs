@@ -1,4 +1,6 @@
-﻿namespace BetwayApp.Models
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace BetwayApp.Models
 {
     public class UsersRepository : IUsersRepository
     {
@@ -9,7 +11,7 @@
 
         public readonly BetwayContext _context;
 
-        public User? Login(string email, string password)
+        public User? Login([FromBody] string email, [FromBody] string password)
         {
             return _context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
         }
