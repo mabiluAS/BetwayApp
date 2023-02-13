@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Login } from './Login'
 import { Cta } from './CTA';
 import { Register } from './Register'
-import { Welcome } from './Welcome'
 import { Categories } from './Categories'
 
 export class Home extends Component {
@@ -10,7 +9,7 @@ export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        active : "",
+        active : props.page === null ? "" : props.page,
         setActive : true
     }   
  }

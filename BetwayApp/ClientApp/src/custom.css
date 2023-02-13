@@ -169,12 +169,10 @@ body{
   border-radius:  2px;
   padding: 5px;
   width: auto;
-  margin-bottom: 15px;
 }
 
 .Welcome-popup
-{
- 
+{ 
   bottom: 0;
   transform: scale(1);
   transition: 1.5s;

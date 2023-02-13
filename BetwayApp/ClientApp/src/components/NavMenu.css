@@ -43,6 +43,6 @@ html {
 
 .btn-green {
   background-color: #00a826 !important;
-  color: white;
+  color: white !important;
   font-weight: bolder;
 }

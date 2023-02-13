@@ -11,7 +11,7 @@ export class NavMenu extends Component {
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      style: ""
     };
   }
 
@@ -29,7 +29,7 @@ export class NavMenu extends Component {
           <NavbarBrand tag={Link} to="/"><img src="https://cdn.betway.co.za/images/Shared/sprite/site/Betway_White.png" className="mainlogo" alt="Betway" /></NavbarBrand>
           <ul className="navbar-nav">
               <NavItem>
-                <button className="btn btn-green" onClick={this.props.onClick}>Login</button>
+                <button className="btn btn-green" to="/" onClick={()=> {this.setState({style: "Login"})}}>Login</button>
               </NavItem>
               <NavItem>
                 <button className="btn btn-white" onClick={this.props.onClick}>Sign Up</button>

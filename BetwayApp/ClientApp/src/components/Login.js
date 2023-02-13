@@ -2,6 +2,7 @@ import { data } from 'jquery';
 import React, { Component } from 'react';
 import FormInput from './FormInput';
 import { Welcome } from './Welcome';
+import axios from 'axios';
 
 export class Login extends Component {
   static displayName = Login.name;
@@ -48,25 +49,16 @@ export class Login extends Component {
   
     handleSubmit(e) {
       e.preventDefault();
-      var myHeaders = new Headers();
-
-      myHeaders.append('Content-Type', 'application/json');
-      const response = fetch("http://localhost:5199/api/login?email=" + this.state.email + "&password=" + this.state.password,
-      {
-        method: "POST",
-        headers: myHeaders,
-        mode: "cors",
-        cache:"default"
-
-      }).then(response => {
-        if(response.status === 200){
-          this.setState({ style: "Welcome-popup" });
-        }else if(response.status === 204){
-          this.setState({message: "Username and Password did not match, try again..."});
-        }
-      }).then(data => {
-        this.setState(data);        
-      }); 
+      var self = this;
+      axios.post("http://localhost:5199/api/login?email=" + this.state.email + "&password=" + this.state.password)
+      .then(response => {
+          if(response.status === 200){
+            self.setState(response.data);
+            self.setState({ style: "Welcome-popup" });
+          }else if(response.status === 204){
+            self.setState({message: "Username and Password did not match, try again..."});
+          }
+      });
     }
   
   render() {
@@ -89,7 +81,7 @@ export class Login extends Component {
           <a className='forgot' href='/'>Forgot Username/Password</a>
           </form>
        </div>       
-      <Welcome style={this.state.style} name={this.state.name} surname={this.state.surname}></Welcome>
+      <Welcome style={this.state.style} title="Welcome back!" name={this.state.name} surname={this.state.surname}></Welcome>
       </>
       
     );

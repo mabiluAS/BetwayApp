@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormInput from './FormInput';
+import { Welcome } from './Welcome';
 
 export class Register extends Component {
   static displayName = Register.name;
@@ -13,7 +14,8 @@ export class Register extends Component {
         cellphone: "", 
         email: "", 
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        style: "hide",
       }; 
   }
 
@@ -24,7 +26,7 @@ export class Register extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const response = fetch("http://localhost:5199/api/register",
+    fetch("http://localhost:5199/api/register",
     {
         method: "POST",
         headers:{
@@ -38,7 +40,15 @@ export class Register extends Component {
           email:this.state.email,
           password: this.state.password
         })
-    });     
+    }).then(response => 
+      {
+        
+        if(response.status === 200){
+            this.setState({style: "Welcome-popup"})
+        }
+      });     
+
+      this.setState({style: "Welcome-popup"})
   }
 
   inputs = [
@@ -104,7 +114,8 @@ export class Register extends Component {
 
   render() {
     return (
-      <div className="Register">
+      <>
+      <div className={this.state.style === "hide" ? "Register" : "hide"}>
         <form id='register_user' onSubmit={this.handleSubmit.bind(this)}>
         <h1>Sign Up to Betway</h1>
         <hr></hr>
@@ -118,6 +129,8 @@ export class Register extends Component {
         <button type='submit' className="btn">Register</button>
         </form>
        </div>
+       <Welcome style={this.state.style} title="Welcome to Betway!" name={this.state.name} surname={this.state.surname}></Welcome>
+      </>      
     );
   }
 }

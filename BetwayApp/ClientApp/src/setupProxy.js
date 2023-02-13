@@ -23,8 +23,7 @@ module.exports = function (app) {
     //ws: true, 
     headers: {
       Connection: 'Keep-Alive'
-    },
-    bodyParser: bodyParser.json()
+    }
   });
 
   app.use(appProxy);
