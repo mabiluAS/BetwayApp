@@ -11,7 +11,7 @@ namespace BetwayApp.Models
 
         public readonly BetwayContext _context;
 
-        public User? Login([FromBody] string email, [FromBody] string password)
+        public User? Login(string email, string password)
         {
             return _context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
         }
